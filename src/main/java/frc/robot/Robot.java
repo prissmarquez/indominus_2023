@@ -49,8 +49,8 @@ public class Robot extends TimedRobot {
   CANSparkMax pivoteoMotorDerecha = new CANSparkMax(5, MotorType.kBrushless);
   CANSparkMax pivoteoMotorIzquierda = new CANSparkMax(6, MotorType.kBrushless);
   CANSparkMax insideMotor = new CANSparkMax(7, MotorType.kBrushless);
-  Talon redLine = new Talon(8);
-  Talon redLine1 = new Talon(9);
+  Talon redLinepush1 = new Talon(8);
+  Talon redLinepush = new Talon(9);
 
   RelativeEncoder garraEncoder = pivoteoMotorDerecha.getEncoder();
 
@@ -102,8 +102,8 @@ public class Robot extends TimedRobot {
       }
 
       else {
-      redLine.set(-0.5);
-      redLine1.set(0.5);
+      redLinepush1.set(-0.5);
+      redLinepush.set(0.5);
        if (tiempo.get() > 0.075) {
         insideMotor.set(0.5);
       }
@@ -114,8 +114,8 @@ public class Robot extends TimedRobot {
       if(garraEncoder.getPosition() > 0) {
         pivoteoMotorDerecha.set(-0.5);
       }
-      redLine.set(0);
-      redLine1.set(0);
+      redLinepush1.set(0);
+      redLinepush.set(0);
       insideMotor.set(0);
     }
 
@@ -167,8 +167,8 @@ public class Robot extends TimedRobot {
         } else {
           pivoteoMotorDerecha.set(0);
         }
-        redLine.set(0.5);
-        redLine1.set(-0.5);
+        redLinepush1.set(0.5);
+        redLinepush.set(-0.5);
         insideMotor.set(0.5);
       } else {
         if(garraEncoder.getPosition() < 90){
@@ -177,8 +177,8 @@ public class Robot extends TimedRobot {
         else{
           pivoteoMotorDerecha.set(0);
         }
-        redLine.set(0);
-        redLine1.set(0);
+        redLinepush1.set(0);
+        redLinepush.set(0);
         insideMotor.set(0);
       }
 
@@ -195,8 +195,8 @@ public class Robot extends TimedRobot {
 
       else {
         pivoteoMotorDerecha.set(0);
-        redLine.set(-0.5);
-        redLine1.set(0.5);
+        redLinepush1.set(-0.5);
+        redLinepush.set(0.5);
         if(tiempo.get() > 0.075){
           insideMotor.set(0.5);
         }
@@ -204,8 +204,8 @@ public class Robot extends TimedRobot {
     }
 
     else {
-      redLine.set(0);
-      redLine1.set(0);
+      redLinepush1.set(0);
+      redLinepush.set(0);
       insideMotor.set(0);
     }
 
