@@ -93,7 +93,7 @@ public class Robot extends TimedRobot {
   @Override
   public void autonomousPeriodic() {
     if (tiempo.get() < 1) {
-      if (garraEncoder.getPosition() < 75){
+      if (garraEncoder.getPosition() < 78){
         pivoteoMotorDerecha.set(0.5);
       }
 
